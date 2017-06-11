@@ -1,0 +1,8 @@
+numpy
+pandas
+sklearn
+keras
+nltk
+distance
+fuzzywuzzy
+networkx
