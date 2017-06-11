@@ -5,6 +5,7 @@ import networkx as nx
 
 NB_CORES = 10
 FREQ_UPPER_BOUND = 100
+NEIGHBOR_UPPER_BOUND = 5
 
 
 def create_question_hash(train_df, test_df):
@@ -65,8 +66,8 @@ def get_neighbors(train_df, test_df):
 def get_neighbor_features(df, neighbors):
     common_nc = df.apply(lambda x: len(neighbors[x.qid1].intersection(neighbors[x.qid2])), axis=1)
     min_nc = df.apply(lambda x: min(len(neighbors[x.qid1]), len(neighbors[x.qid2])), axis=1)
-    df["common_neighbor_count"] = common_nc
     df["common_neighbor_ratio"] = common_nc / min_nc
+    df["common_neighbor_count"] = common_nc.apply(lambda x: min(x, NEIGHBOR_UPPER_BOUND))
     return df
 
 
