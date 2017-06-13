@@ -1,6 +1,6 @@
 # Solution to Kaggle's Quora Duplicate Question Detection Competition
 
-The competition can be found via the link: https://www.kaggle.com/c/quora-question-pairs I was ranked 24th (top 1%) among 3394 teams with this solution. This is a relatively lightweight model considering the other top solutions.
+The competition can be found via the link: https://www.kaggle.com/c/quora-question-pairs I was ranked 23rd (top 1%) among 3307 teams with this solution. This is a relatively lightweight model considering the other top solutions.
 
 ## Prerequisites
 * Download the pre-trained word vectors, namely glove.840B.300d, from https://nlp.stanford.edu/projects/glove/ and put it into the project directory.
