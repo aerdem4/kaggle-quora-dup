@@ -1,4 +1,5 @@
 from collections import defaultdict
+import numpy as np
 import pandas as pd
 
 NUM_MODELS = 10
@@ -25,7 +26,7 @@ a = TEST_TARGET_MEAN / TRAIN_TARGET_MEAN
 b = (1 - TEST_TARGET_MEAN) / (1 - TRAIN_TARGET_MEAN)
 df["is_duplicate"] = df["is_duplicate"].apply(lambda x: a*x / (a*x + b*(1 - x)))
 
-test_label = df["is_duplicate"]
+test_label = np.array(df["is_duplicate"])
 
 print("Updating the predictions of the pairs with common duplicates..")
 for i in range(REPEAT):
