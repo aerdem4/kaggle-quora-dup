@@ -5,4 +5,4 @@ keras
 nltk
 distance
 fuzzywuzzy
-networkx
+networkx==1.11
